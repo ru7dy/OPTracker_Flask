@@ -1,0 +1,12 @@
+{% extends "general.html" %}
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='searchbar.css') }}">
+{% endblock %}
+{% block body %}
+  <div class="byline cf"><p>OPTracker: Track & Estimate Your OPT</p></div>
+  <form class="form-wrapper cf" method="post" action="{{ url_for('estimate') }}">
+      <input type="text" name="receipt_num" autofocus placeholder="Receipt Number, e.g. YSC1790054321" required>
+      <button type="submit">Search</button>
+  </form>
+  <div class="disclaimer-wrapper cf">OPTracker aims to provide <b>visualization</b> and <b>estimation</b> for all OPT cases using publicly available information from USCIS. The estimation is based on the average number of cases reviewed in the last ten business days, thus can be <b>inaccurate</b> and should be used as a reference <b>at the user's own risk</b>. Should you have any question or concern, please contact <b>myoptstatus@gmail.com</b>. </div>
+{% endblock %}
