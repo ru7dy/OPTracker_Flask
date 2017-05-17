@@ -1,10 +1,8 @@
 {% extends "general.html" %}
-{% block head %}
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='searchbar.css') }}">
-{% endblock %}
 {% block body %}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='searchbar.css') }}">
   <div class="byline cf"><p>OPTracker: Track & Estimate Your OPT</p></div>
-  <form class="form-wrapper cf" method="post" action="{{ url_for('estimate') }}">
+  <form class="form-wrapper cf" method="post" action="{{ url_for('query_results') }}">
       <input type="text" name="receipt_num" autofocus placeholder="Receipt Number, e.g. YSC1790054321" required>
       <button type="submit">Search</button>
   </form>
